@@ -217,4 +217,21 @@ document.getElementById('skip').onclick=finish;intro.addEventListener('click',fi
 })();
 </script>
 <script data-goatcounter="https://fadelzrir.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+(function(){
+var M={he:['כדי לשמור איש קשר, פתחו את העמוד בדפדפן','לחצו על ⋯ או ⋮ בפינה ובחרו "פתח בדפדפן" / "Open in browser"','העתקת קישור','הקישור הועתק ✓','סגירה'],
+en:['To save the contact, open this page in your browser','Tap ⋯ or ⋮ in the corner and choose "Open in browser"','Copy link','Link copied ✓','Close'],
+uk:['Щоб зберегти контакт, відкрийте сторінку в браузері','Натисніть ⋯ або ⋮ у куті та оберіть «Відкрити в браузері»','Копіювати посилання','Скопійовано ✓','Закрити'],
+ar:['لحفظ جهة الاتصال، افتحوا الصفحة في المتصفح','اضغطوا ⋯ أو ⋮ في الزاوية واختاروا "فتح في المتصفح"','نسخ الرابط','تم النسخ ✓','إغلاق']};
+var ua=navigator.userAgent||'';var inApp=/Instagram|FBAN|FBAV|FB_IAB|FBIOS|Line\/|TikTok|musical_ly|Bytedance|Snapchat|Twitter/i.test(ua);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.save');if(!a||!inApp)return;e.preventDefault();
+ var t=M[document.documentElement.lang]||M.en;var d=document.createElement('div');
+ d.setAttribute('role','dialog');d.style.cssText='position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.75);display:grid;place-items:center;padding:16px';
+ d.innerHTML='<div style="max-width:400px;background:#151214;border:1px solid rgba(236,212,156,.4);border-radius:20px;padding:24px;text-align:center;color:#f5f2ea;font-family:inherit;line-height:1.6"><div style="font-size:30px">↗️</div><b style="display:block;font-size:18px;margin:8px 0">'+t[0]+'</b><p style="opacity:.75;font-size:14px">'+t[1]+'</p><button id="iabCopy" style="margin-top:16px;width:100%;padding:13px;border-radius:14px;border:0;background:#c9a45c;color:#111;font:600 15px inherit;font-family:inherit">'+t[2]+'</button><button id="iabX" style="margin-top:8px;width:100%;padding:11px;border-radius:14px;border:1px solid rgba(255,255,255,.2);background:none;color:#f5f2ea;font-family:inherit">'+t[4]+'</button></div>';
+ document.body.appendChild(d);
+ d.querySelector('#iabX').onclick=function(){d.remove()};d.onclick=function(ev){if(ev.target===d)d.remove()};
+ d.querySelector('#iabCopy').onclick=function(){var b=this;var u=location.href.split('#')[0];(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){b.textContent=t[3]},function(){prompt('',u)})};
+},true);
+})();
+</script>
 </body></html>
